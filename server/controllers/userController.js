@@ -16,8 +16,8 @@ const generateJwt = (id, email, role) => {
   );
 };
 class UserController {
-  async registration(reg, res, next) {
-    const { email, password, role } = reg.body;
+  async registration(req, res, next) {
+    const { email, password, role } = req.body;
     if (!email || !password) {
       return next(ApiError.badRequest("Некорректный email или password"));
     }
@@ -33,8 +33,8 @@ class UserController {
     const token = generateJwt(user.id, user.email, user.role);
     return res.json({ token });
   }
-  async login(reg, res, next) {
-    const { email, password } = reg.body;
+  async login(req, res, next) {
+    const { email, password } = req.body;
     const user = await User.findOne({ where: { email } });
     if (!user) {
       return next(ApiError.iternal("Пользователь с таким именем не найден"));
