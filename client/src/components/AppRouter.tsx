@@ -8,7 +8,8 @@ export default function AppRouter() {
  const {userStore} = useStore()
  console.log(userStore)
   return (
-    <Routes>
+    <div className="mx-auto max-w-screen-xl">
+      <Routes>
       {userStore.isAuth &&
         authRoutes.map(({ path, Component }) => (
           <Route path={path} element={<Component />} key={path} />
@@ -18,5 +19,7 @@ export default function AppRouter() {
       ))}
       <Route path="*" element={<Navigate to="/" />}/>
     </Routes>
+    </div>
+    
   );
 }
