@@ -1,14 +1,14 @@
-import { action, makeAutoObservable, observable } from 'mobx';
+import { action, makeAutoObservable, observable } from "mobx";
 
 export default class DeviceStore {
-    _types ?:any[];
-    _brands ?: any[];
-    _devices ?: any[];
-    _selectedType ?:{};
-    _selectedBrand ?:{};
-    _page ?:number;
-    _totalCount ?:number;
-    _limit ?:number;
+  _types?: any[];
+  _brands?: any[];
+  _devices?: any[];
+  _selectedType?: {};
+  _selectedBrand?: {};
+  _page?: number;
+  _totalCount?: number;
+  _limit?: number;
   constructor() {
     this._types = [];
     this._brands = [];
@@ -19,43 +19,48 @@ export default class DeviceStore {
     this._totalCount = 0;
     this._limit = 3;
     makeAutoObservable(this, {
-        _types = observable,
-        _brands =observable,
-        _devices = observable,
-        _selectedType =observable,
-        _selectedBrand = observable,
-        _page = observable,
-        _totalCount =observable,
-        _limit = observable,
-        selectedBrand:action, 
-        setBrands:action, 
-        setPage:action, 
-        setDevices:action, setTotalCount:action, setTypes:action, setSelectedBrand:action, setSelectedType:action, selectedType:action
+      _types: observable,
+      _brands: observable,
+      _devices: observable,
+      _selectedType: observable,
+      _selectedBrand: observable,
+      _page: observable,
+      _totalCount: observable,
+      _limit: observable,
+      selectedBrand: action,
+      setBrands: action,
+      setPage: action,
+      setDevices: action,
+      setTotalCount: action,
+      setTypes: action,
+      setSelectedBrand: action,
+      setSelectedType: action,
+      selectedType: action,
     });
   }
 
-  setTypes(types:any) {
+  setTypes(types: any) {
     this._types = types;
   }
-  setBrands(brands:any) {
+  setBrands(brands: any) {
     this._brands = brands;
   }
-  setDevices(devices:any) {
+  setDevices(devices: any) {
     this._devices = devices;
   }
 
-  setSelectedType(type:any) {
+  setSelectedType(type: any) {
     this.setPage(1);
     this._selectedType = type;
   }
-  setSelectedBrand(brand:any) {
+  setSelectedBrand(brand: any) {
     this.setPage(1);
     this._selectedBrand = brand;
   }
-  setPage(page:number) {
+  setPage(page: number) {
     this._page = page;
   }
-  setTotalCount(count:number) {
+  setTotalCount(count: number) {
     this._totalCount = count;
   }
 

@@ -10,7 +10,7 @@ export  class UserStore {
   _user?: IUser |null;
   _isAuth?: boolean;
   constructor() {
-    this._isAuth = true;
+    this._isAuth = false;
     this._user = null;
     makeAutoObservable(this, {
       _user: observable,
