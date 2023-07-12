@@ -1,6 +1,6 @@
-import { action, makeAutoObservable, observable } from "mobx";
+import { action, computed, makeAutoObservable, observable } from "mobx";
 
-export default class DeviceStore {
+export  class DeviceStore {
   _types?: any[];
   _brands?: any[];
   _devices?: any[];
@@ -27,7 +27,6 @@ export default class DeviceStore {
       _page: observable,
       _totalCount: observable,
       _limit: observable,
-      selectedBrand: action,
       setBrands: action,
       setPage: action,
       setDevices: action,
@@ -35,7 +34,14 @@ export default class DeviceStore {
       setTypes: action,
       setSelectedBrand: action,
       setSelectedType: action,
-      selectedType: action,
+      selectedType: computed,
+      selectedBrand: computed,
+      types: computed,
+      brands: computed,
+      devices: computed,
+      totalCount: computed,
+      page: computed,
+      limit: computed,
     });
   }
 
@@ -89,3 +95,6 @@ export default class DeviceStore {
     return this._limit;
   }
 }
+
+
+export default new DeviceStore();

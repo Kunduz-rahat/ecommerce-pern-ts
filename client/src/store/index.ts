@@ -1,11 +1,13 @@
+import deviceStore, {DeviceStore} from "./DeviceStore"
 import userStore, {UserStore} from "./UserStore"
 
 export  type RootStore = {
-    userStore:UserStore
+    userStore:UserStore,
+    deviceStore:DeviceStore
 }
 
 const rootStore:RootStore = {
-    userStore
+    userStore, deviceStore
 }
 
 export default rootStore

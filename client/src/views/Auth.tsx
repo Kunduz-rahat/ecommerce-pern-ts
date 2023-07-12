@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils";
 
 export const Auth = () => {
@@ -43,7 +43,7 @@ export const Auth = () => {
               </button>
               <div>
               <Link
-                to={LOGIN_ROUTE}
+                to={REGISTRATION_ROUTE}
                 className="flex justify-center items-center text-xs text-black"
               >
                 Зарегистрируйся !
@@ -61,12 +61,12 @@ export const Auth = () => {
                 Есть аккаунт ?
               </button>
               <div>
-              <Link
-                to={REGISTRATION_ROUTE}
+              <NavLink
+                to={LOGIN_ROUTE}
                 className="flex justify-center items-center text-xs text-black"
               >
                 Войдите
-              </Link>
+              </NavLink>
               </div>
              
             </div>
