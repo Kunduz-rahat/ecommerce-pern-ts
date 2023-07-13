@@ -1,6 +1,6 @@
 import { action, computed, makeAutoObservable, observable } from "mobx";
 
-export  class DeviceStore {
+export class DeviceStore {
   _types?: any[];
   _brands?: any[];
   _devices?: any[];
@@ -10,9 +10,49 @@ export  class DeviceStore {
   _totalCount?: number;
   _limit?: number;
   constructor() {
-    this._types = [];
-    this._brands = [];
-    this._devices = [];
+    this._types = [
+      { id: 1, name: "Холоддильник" },
+      { id: 2, name: "TV" },
+      { id: 3, name: "Phone" },
+      { id: 4, name: "TV" },
+    ];
+    this._brands = [
+      { id: 1, name: "Samsung" },
+      { id: 2, name: "LG" },
+      { id: 3, name: "Apple" },
+      { id: 4, name: "Samsung" },
+      { id: 5, name: "LG" },
+      { id: 6, name: "Apple" },
+      { id: 7, name: "Samsung" },
+      { id: 9, name: "LG" },
+      { id: 8, name: "Apple" },
+    ];
+    this._devices = [
+      {
+        id: 1,
+        name: "Iphone pro12",
+        rating: 4,
+        img: "https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14pro/deeppurple/wwen_iphone14pro_q422_deep-purple_pdp-images_position-1a-670x540.webp",
+      },
+      {
+        id: 2,
+        name: "Iphone pro12",
+        rating: 4,
+        img: "https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14pro/deeppurple/wwen_iphone14pro_q422_deep-purple_pdp-images_position-1a-670x540.webp",
+      },
+      {
+        id: 3,
+        name: "Iphone ",
+        rating: 4,
+        img: "https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14pro/deeppurple/wwen_iphone14pro_q422_deep-purple_pdp-images_position-1a-670x540.webp",
+      },
+      {
+        id: 4,
+        name: "Iphone pro19",
+        rating: 4,
+        img: "https://asiastore.kg/image/cachewebp/catalog/iphone/iphone14/iphone14pro/deeppurple/wwen_iphone14pro_q422_deep-purple_pdp-images_position-1a-670x540.webp",
+      },
+    ];
     this._selectedType = {};
     this._selectedBrand = {};
     this._page = 1;
@@ -95,6 +135,5 @@ export  class DeviceStore {
     return this._limit;
   }
 }
-
 
 export default new DeviceStore();
