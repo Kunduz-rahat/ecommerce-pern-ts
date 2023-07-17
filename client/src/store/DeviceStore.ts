@@ -1,4 +1,8 @@
 import { action, computed, makeAutoObservable, observable } from "mobx";
+export type ISelectedBrand = {
+  name: string;
+ 
+};
 
 export class DeviceStore {
   _types?: any[];
@@ -101,7 +105,7 @@ export class DeviceStore {
   }
   setSelectedBrand(brand: any) {
     this.setPage(1);
-    this._selectedBrand = brand;
+    this._selectedBrand = brand ;
   }
   setPage(page: number) {
     this._page = page;
