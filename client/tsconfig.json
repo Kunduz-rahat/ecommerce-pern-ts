@@ -22,7 +22,7 @@
     "jsx": "react-jsx", 
     "useDefineForClassFields": true,
   },
-  "include": [
-    "src"
-  ]
+  "include": 
+    ["./src/index.d.ts"]
+  
 }

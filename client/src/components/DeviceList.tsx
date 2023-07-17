@@ -13,7 +13,7 @@ export const DeviceList= observer(() => {
   const { deviceStore } = useStore();
   console.log(deviceStore.devices);
   return (
-    <div>
+    <div className=" flex justify-center items-center py-20">
       {deviceStore.devices?.map((device, idx) => (
         <DeviceItem key={idx} device={device} />
       ))}
