@@ -4,6 +4,7 @@ import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "../utils";
 import { login, registration } from "../http/userApi";
 import { observer } from "mobx-react-lite";
 import { useStore } from "../store";
+import React from "react";
 
 export const Auth = observer(() => {
   const { userStore } = useStore();

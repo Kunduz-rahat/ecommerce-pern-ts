@@ -4,7 +4,7 @@ import { useStore } from "../store";
 export const BrandBar = observer(() => {
     const { deviceStore } = useStore();
   return (
-    <div className="grid grid-cols-6 gap-4 text-gray-900   bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"> {deviceStore.brands?.map((brand) => (
+    <div className="grid grid-cols-6 gap-4 text-gray-900    border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"> {deviceStore.brands?.map((brand) => (
         <button key={brand.id}
           type="button"
           

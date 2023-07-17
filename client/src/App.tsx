@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./components/AppRouter";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from "./components/Header";
 import { observer } from "mobx-react-lite";
 import { useStore } from "./store";

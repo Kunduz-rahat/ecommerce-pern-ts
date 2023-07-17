@@ -3,6 +3,7 @@ import { authRoutes, publicRoutes } from "../routes";
 import { useContext } from "react";
 import { StoreProvider } from "../store";
 import { useStore } from "../store";
+import React from "react";
 
 export default function AppRouter() {
  const {userStore} = useStore()

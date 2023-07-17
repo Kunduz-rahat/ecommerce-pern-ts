@@ -4,6 +4,7 @@ import { BrandBar } from "../components/BrandBar";
 import { DeviceList } from "../components/DeviceList";
 import { useStore } from "../store";
 import { fetchBrands, fetchDevices, fetchTypes } from "../http/deviceApi";
+import React from "react";
 export const Shop = () => {
   const { deviceStore } = useStore();
   // useEffect(() => {
